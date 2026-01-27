@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About – Vienna Classical Nights</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">Vienna Classical Nights</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php" class="active">About</a></li>
+                <li><a href="concerts.php">Concerts</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="register.php">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- About Banner -->
+    <section class="banner about-banner">
+        <h1>About Vienna Classical Nights</h1>
+        <p>Preserving the elegance, artistry, and timeless heritage of Vienna’s golden musical era.</p>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-container">
+
+        <h2>Our Mission</h2>
+        <p>
+            Vienna Classical Nights was founded with the purpose of honoring the city’s profound musical legacy. 
+            We bring together exceptional orchestras, renowned soloists, and historic venues to create evenings that 
+            reflect the grandeur of Vienna’s classical tradition.
+        </p>
+
+        <h2>What We Stand For</h2>
+        <p>
+            Our work is built upon authenticity, artistic excellence, and respect for the masters whose compositions 
+            shaped the world of music. Every performance seeks to recreate the refined atmosphere of Vienna’s golden age,
+            where elegance and culture were inseparable.
+        </p>
+
+        <h2>Why Vienna</h2>
+        <p>
+            From the Musikverein’s Golden Hall to the Vienna State Opera, this city is home to the most distinguished 
+            concert halls in the world. It is here that Mozart, Beethoven, Brahms, and Strauss premiered their creations—
+            a heritage we are proud to uphold.
+        </p>
+
+        <h2>Our Vision</h2>
+        <p>
+            To offer audiences a transcendent musical experience—one that unites tradition, sophistication, and 
+            the unmatched artistry of Vienna’s finest performers.
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© Vienna Classical Nights | Vienna, Austria</p>
+        <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </footer>
+
+</body>
+</html>

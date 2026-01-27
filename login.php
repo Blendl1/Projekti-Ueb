@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Vienna Classical Nights</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Vienna Classical Nights</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php" class="active">About</a></li>
+                <li><a href="concerts.php">Concerts</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="register.php">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    
+    <main class="login-section">
+        <div class="login-container">
+            <h2>Login</h2>
+            <form action="#" method="post">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" minlength="6"
+                    required>
+
+                <button type="submit" class="login-button">Login</button>
+            </form>
+            <p class="register-link">Don't have an account? <a href="register.php">Register here</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© Vienna Classical Nights | Vienna, Austria</p>
+    </footer>
+
+</body>
+</html>
