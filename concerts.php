@@ -26,7 +26,29 @@
     </header>
 
     <main class="concerts-section container">
-        <h2>Upcoming Concerts</h2>
+
+    <!-- Slideshow -->
+    <section class="slideshow-container">
+        <div class="slides">
+            <div class="slide-fade">
+                <img src="images/slideshow1.jpg" alt="Vienna Concert Hall">
+                <div class="slide-caption">Elegant Venues</div>
+            </div>
+            <div class="slide-fade">
+                <img src="images/slideshow2.jpg" alt="Orchestra Performance">
+                <div class="slide-caption">World-Class Orchestras</div>
+            </div>
+            <div class="slide-fade">
+                <img src="images/slideshow3.jpg" alt="Classical Piano">
+                <div class="slide-caption">Timeless Masterpieces</div>
+            </div>
+        </div>
+        
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </section>
+
+    <h2>Upcoming Concerts</h2>
 
         <!-- CONCERT 1 -->
         <section class="concert-day-hero"
@@ -76,6 +98,9 @@
             <li><a href="#">Contact</a></li>
         </ul>
     </footer>
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>

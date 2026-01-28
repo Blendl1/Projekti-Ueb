@@ -72,6 +72,7 @@
             <li><a href="#">Contact</a></li>
         </ul>
     </footer>
+    <script src="js/script.js"></script>
 
 </body>
 </html>
