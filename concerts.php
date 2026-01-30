@@ -1,3 +1,16 @@
+<?php
+    session_start();
+    require_once "header.php"; 
+    require_once "connect.php";
+
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: login.php");
+    exit;
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,19 +24,6 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo">Vienna Classical Nights</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="concerts.php" class="active">Concerts</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="register.php">Register</a></li>
-                
-            </ul>
-        </nav>
-    </header>
 
     <main class="concerts-section container">
 

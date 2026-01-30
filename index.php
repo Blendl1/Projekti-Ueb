@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    require_once "header.php"; 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,22 +13,10 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
-</head>
+
 
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="logo">Vienna Classical Nights</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="concerts.php">Concerts</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="register.php">Register</a></li>
-            </ul>
-        </nav>
-    </header>
+   
 
     <!-- Banner -->
     <section class="banner">

@@ -526,3 +526,13 @@ footer p {
     from { opacity: 0.4; }
     to { opacity: 1; }
 }   
+
+
+.error-message {
+    color: #c62828;
+    background: #fdecea;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}

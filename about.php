@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    require_once "header.php"; 
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,22 +17,7 @@
 </head>
 
 <body>
-
-    <!-- Header -->
-    <header class="header">
-        <div class="logo">Vienna Classical Nights</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="about.php" class="active">About</a></li>
-                <li><a href="concerts.php">Concerts</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="register.php">Register</a></li>
-            </ul>
-        </nav>
-    </header>
-
-
+    
     <!-- About Banner -->
     <section class="banner about-banner">
         <h1>About Vienna Classical Nights</h1>
