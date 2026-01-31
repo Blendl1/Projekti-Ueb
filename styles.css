@@ -528,12 +528,79 @@ footer p {
 }   
 
 
-.error-message {
-    color: #c62828;
-    background: #fdecea;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    text-align: center;
+
+
+@media (max-width: 768px) {
+    
+    
+    .header {
+        flex-direction: column; 
+        padding: 15px;
+    }
+    .nav-links {
+        margin-top: 15px;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    
+    .banner h1, .about-banner h1 {
+        font-size: 30px;
+    }
+    .banner p, .about-banner p {
+        font-size: 16px;
+    }
+
+    
+    .features {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .feature {
+        max-width: 100%;
+    }
+
+    
+    .concert-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .price-button {
+        text-align: center;
+    }
+
+   
+    .concert-day-hero {
+        height: auto;
+    }
+    .concert-day-hero-overlay {
+        position: relative;
+        padding: 20px;
+        background: #222; 
+    }
+
+    
+    .login-container, .register-container {
+        width: 95%;
+        padding: 20px;
+    }
 }
+
+
+@media (max-width: 480px) {
+    .header .logo {
+        font-size: 20px;
+    }
+    .nav-links a {
+        font-size: 14px;
+    }
+    .buy-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 
