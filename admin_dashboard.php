@@ -1,17 +1,21 @@
 <?php
 session_start();
-include "connect.php";
+require_once "Database.php";
+require_once "Admin.php";
 
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+$db = new Database();
+$admin = new Admin($db);
+
+if (!$admin->checkAdmin()) {
     header("Location: login.php");
     exit();
 }
 
 $adminName = $_SESSION['username'];
-
-$query = "SELECT id, users_name, users_email, role FROM users";
-$result = $conn->query($query);
+$users = $admin->getAllUsers();
+$totalUsers = $users->num_rows;
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,29 +24,21 @@ $result = $conn->query($query);
     <link rel="stylesheet" href="admin_style.css">
 </head>
 <body>
-
-<div class="sidebar">
-    <h2>VIENNA CLASSICAL NIGHTS</h2>
-    <a href="#" class="active">Dashboard</a>
-    <a href="#">Manage Concerts</a>
-    <a href="#">User Management</a>
-    <a href="#">Booking Requests</a>
-    <a href="logout.php" class="logout-btn">Sign Out</a>
-</div>
+<?php require_once "admin_sidebar.php"; ?>
 
 <div class="main-content">
     <div class="header">
         <div>
             <h1>Dashboard Overview</h1>
-            <p>Welcome back, <?php echo htmlspecialchars($adminName); ?></p>
+            <p>Welcome back, <?= htmlspecialchars($adminName) ?></p>
         </div>
-        <div class="date"><?php echo date("F d, Y"); ?></div>
+        <div class="date"><?= date("F d, Y") ?></div>
     </div>
 
     <div class="stats-grid">
         <div class="card">
-            <h3>Total Registered</h3>
-            <p><?php echo $result->num_rows; ?></p>
+            <h3>Total Registered Users</h3>
+            <p><?= $totalUsers ?></p>
         </div>
         <div class="card">
             <h3>System Status</h3>
@@ -56,35 +52,32 @@ $result = $conn->query($query);
 
     <div class="table-container">
         <h3>Registered Users</h3>
-        <br>
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Full Name</th>
-                    <th>Email Address</th>
-                    <th>Access Level</th>
+                    <th>Email</th>
+                    <th>Role</th>
                 </tr>
             </thead>
             <tbody>
-                <?php
-                if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . $row['id'] . "</td>";
-                        echo "<td>" . $row['users_name'] . "</td>";
-                        echo "<td>" . $row['users_email'] . "</td>";
-                        echo "<td><span class='badge'>" . strtoupper($row['role']) . "</span></td>";
-                        echo "</tr>";
-                    }
-                } else {
-                    echo "<tr><td colspan='4'>No users found</td></tr>";
-                }
-                ?>
+                <?php if($users->num_rows > 0): ?>
+                    <?php while($row = $users->fetch_assoc()): ?>
+                        <tr>
+                            <td><?= $row['id'] ?></td>
+                            <td><?= htmlspecialchars($row['users_name']) ?></td>
+                            <td><?= htmlspecialchars($row['users_email']) ?></td>
+                            <td><?= strtoupper($row['role']) ?></td>
+                        </tr>
+                    <?php endwhile; ?>
+                <?php else: ?>
+                    <tr><td colspan="4">No users found</td></tr>
+                <?php endif; ?>
             </tbody>
         </table>
     </div>
 </div>
-
 </body>
 </html>
+                    
