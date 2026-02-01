@@ -47,7 +47,7 @@ class SignupContr extends Signup {
             $_SESSION["username"] = $user["users_name"];
         }
 
-        header("location: index.php");
+        header("location: login.php");
         exit();
     }
 

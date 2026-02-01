@@ -17,8 +17,7 @@ require_once "header.php";
 <?php
 if (isset($_SESSION["error_message"])) {
     echo '<p style="color:red;">' . $_SESSION["error_message"] . '</p>';
-    unset($_SESSION["error_message"]); // clear it so it doesn’t show again
-}
+    unset($_SESSION["error_message"]); }
 ?>
 
 <main class="register-section">
