@@ -124,3 +124,33 @@ table td {
     background: #e1f5fe;
     color: #0288d1;
 }
+
+.table-container {
+    overflow-x: auto;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.admin-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 13px;
+    min-width: 900px;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.admin-table tbody tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.admin-table tbody tr:hover {
+    background-color: #e0e0e0;
+}
+
