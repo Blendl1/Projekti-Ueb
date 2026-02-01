@@ -1,31 +1,31 @@
 <?php
-    session_start();
-    require_once "header.php"; 
-    require_once "connect.php";
+session_start();
+require_once "Database.php";
+require_once "concert.php";
+require_once "header.php";
 
-    if (!isset($_SESSION['user_id'])) {
-        header("Location: login.php");
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
     exit;
 }
+
+$db = new Database();
+$concertObj = new Concert($db);
+$concerts = $concertObj->getUpcomingConcerts();
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Vienna Classical Nights | Concerts</title>
     <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
 </head>
-
 <body>
 
-    <main class="concerts-section container">
+<main class="concerts-section container">
 
     <!-- Slideshow -->
     <section class="slideshow-container">
@@ -43,64 +43,43 @@
                 <div class="slide-caption">Timeless Masterpieces</div>
             </div>
         </div>
-        
         <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
         <a class="next" onclick="changeSlide(1)">&#10095;</a>
     </section>
 
     <h2>Upcoming Concerts</h2>
 
-        <!-- CONCERT 1 -->
-        <section class="concert-day-hero"
-            style="background-image: url('images/image11.jpg');">
-            <div class="concert-day-hero-overlay">
-                <div class="concert-day-info">
-                    <h3>Saturday, January 10th, 2026</h3>
-                    <h2>The Genius of Mozart</h2>
-                    <p>Musikverein Golden Hall | 19:30 | Featuring Vienna Residence Orchestra</p>
-                    <a href="#" class="buy-button">Buy Tickets</a>
+    <?php if ($concerts->num_rows > 0): ?>
+        <?php while ($concert = $concerts->fetch_assoc()): ?>
+            <section class="concert-day-hero" style="background-image: url('<?= htmlspecialchars($concert['image_path']) ?>');">
+                <div class="concert-day-hero-overlay">
+                    <div class="concert-day-info">
+                        <h3><?= date("l, F jS, Y", strtotime($concert['concert_date'])) ?></h3>
+                        <h2><?= htmlspecialchars($concert['title']) ?></h2>
+                        <p>
+                            <?= htmlspecialchars($concert['venue']) ?> |
+                            <?= substr($concert['concert_time'], 0, 5) ?> |
+                            €<?= $concert['price'] ?>
+                        </p>
+                        <a href="buy_ticket.php?concert_id=<?= $concert['id'] ?>" class="buy-button">Buy Tickets</a>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        <?php endwhile; ?>
+    <?php else: ?>
+        <p style="text-align:center; font-size:18px; margin-top:20px;">No upcoming concerts.</p>
+    <?php endif; ?>
 
-        <!-- CONCERT 2 -->
-        <section class="concert-day-hero"
-            style="background-image: url('images/image22.jpg');">
-            <div class="concert-day-hero-overlay">
-                <div class="concert-day-info">
-                    <h3>Sunday, January 18th, 2026</h3>
-                    <h2>Strauss Waltz Gala</h2>
-                    <p>Vienna State Opera | 20:00 | Featuring Wiener Philharmoniker</p>
-                    <a href="#" class="buy-button">Buy Tickets</a>
-                </div>
-            </div>
-        </section>
+</main>
 
-        <!-- CONCERT 3 -->
-        <section class="concert-day-hero"
-            style="background-image: url('images/image33.jpg');">
-            <div class="concert-day-hero-overlay">
-                <div class="concert-day-info">
-                    <h3>Friday, January 30th, 2026</h3>
-                    <h2>Beethoven's 5th Symphony</h2>
-                    <p>Konzerthaus | 18:00 | Featuring Various International Artists</p>
-                    <a href="#" class="buy-button">Buy Tickets</a>
-                </div>
-            </div>
-        </section>
+<footer>
+    <p>© Vienna Classical Nights | Vienna, Austria</p>
+    <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</footer>
 
-    </main>
-
-    <footer>
-        <p>© Vienna Classical Nights | Vienna, Austria</p>
-        <ul class="footer-links">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </footer>
-
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
-
 </html>
