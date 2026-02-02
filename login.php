@@ -1,10 +1,13 @@
 <?php
-// Start session first
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Include navbar/header
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
+header("Expires: 0");
+
 require_once "header.php";
 ?>
 
@@ -23,10 +26,10 @@ require_once "header.php";
         <h2>Login</h2>
 
         <?php
-        // Display any error messages from signin.php
+        
         if (!empty($_SESSION["error_message"])) {
             echo '<p class="error-message">' . $_SESSION["error_message"] . '</p>';
-            unset($_SESSION["error_message"]); // clear it so it doesn’t repeat
+            unset($_SESSION["error_message"]); 
         }
         ?>
 
