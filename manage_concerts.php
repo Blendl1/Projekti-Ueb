@@ -12,7 +12,7 @@ header("Expires: 0");
 require_once "Database.php";
 require_once "admin.php";
 require_once "concert.php";
-require_once "admin_sidebar.php";
+/*require_once "admin_sidebar.php";*/
 
 $db = new Database();
 $admin = new Admin($db);
@@ -66,6 +66,7 @@ if (isset($_GET['edit'])) {
 <head>
     <meta charset="UTF-8">
     <title>Manage Concerts | Vienna Nights</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="admin_style.css">
 </head>
 <body>

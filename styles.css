@@ -529,78 +529,151 @@ footer p {
 
 
 
+img {
+    max-width: 100%;
+    height: auto;
+}
 
-@media (max-width: 768px) {
-    
-    
+input,
+button,
+.buy-button,
+input[type="number"] {
+    box-sizing: border-box;
+    font-size: 17px;
+}
+
+.header,
+.nav-links,
+.feature {
+    transition: all 0.3s ease;
+}
+
+
+
+.nav-links a {
+    font-size: 20px; 
+    font-weight: 600;
+}
+
+.nav-icons a {
+    font-size: 22px;
+}
+
+
+
+.my-tickets-page,
+.my-tickets-page p,
+.my-tickets-page span {
+    font-size: 20px; 
+}
+
+.ticket-card {
+    font-size: 20px; 
+}
+
+.ticket-card i {
+    font-size: 22px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+
     .header {
-        flex-direction: column; 
-        padding: 15px;
+        flex-direction: column;
+        padding: 20px;
+        background-color: #f7f7f7;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .header .logo {
+        font-size: 24px;
+        margin-bottom: 10px;
     }
     .nav-links {
         margin-top: 15px;
-        gap: 15px;
+        gap: 18px;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    
-    .banner h1, .about-banner h1 {
-        font-size: 30px;
-    }
-    .banner p, .about-banner p {
-        font-size: 16px;
+    .nav-links a {
+        font-size: 19px !important; 
     }
 
-    
-    .features {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-    .feature {
-        max-width: 100%;
+    .nav-icons a {
+        font-size: 22px;
     }
 
-    
+    .login-container,
+    .register-container {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .login-container input,
+    .login-container button,
+    .register-container input,
+    .buy-button,
+    .confirm-purchase,
+    input[type="number"] {
+        font-size: 17px !important;
+        padding: 14px;
+        width: 100%;
+    }
+
+    label {
+        font-size: 17px;
+    }
+
+    .banner h1,
+    .about-banner h1 {
+        font-size: 34px;
+    }
+
+    .banner p,
+    .about-banner p {
+        font-size: 18px;
+    }
+
     .concert-card {
         flex-direction: column;
         text-align: center;
-        gap: 15px;
+        gap: 18px;
+        font-size: 18px;
     }
     .price-button {
-        text-align: center;
+        font-size: 18px;
     }
 
-   
-    .concert-day-hero {
-        height: auto;
-    }
-    .concert-day-hero-overlay {
-        position: relative;
-        padding: 20px;
-        background: #222; 
+    .my-tickets-page h1,
+    h1.main-title {
+        font-size: 36px; 
     }
 
-    
-    .login-container, .register-container {
-        width: 95%;
-        padding: 20px;
-    }
-}
-
-
-@media (max-width: 480px) {
-    .header .logo {
+    .no-tickets-message {
         font-size: 20px;
-    }
-    .nav-links a {
-        font-size: 14px;
-    }
-    .buy-button {
-        width: 100%;
-        text-align: center;
+        padding: 40px 20px;
     }
 }
 
 
+
+@media screen and (max-width: 480px) {
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    .buy-button,
+    .back-button {
+        width: 100%;
+        font-size: 18px;
+        display: block;
+    }
+}

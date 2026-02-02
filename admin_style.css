@@ -154,3 +154,117 @@ table td {
     background-color: #e0e0e0;
 }
 
+@media (max-width: 1024px) {
+
+    .sidebar {
+        width: 220px;
+        padding: 20px;
+    }
+
+    .main-content {
+        margin-left: 220px;
+        width: calc(100% - 220px);
+        padding: 25px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card p {
+        font-size: 26px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    
+    .sidebar {
+        width: 140px;
+        padding: 12px;
+    }
+
+    .sidebar h2 {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+
+    .sidebar a {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    
+    .main-content {
+        margin-left: 140px;
+        width: calc(100% - 140px);
+        padding: 15px;
+    }
+
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .card p {
+        font-size: 24px;
+    }
+
+    
+    table {
+        width: 100%;
+        table-layout: auto;
+    }
+
+    table th,
+    table td {
+        font-size: 14px;
+        padding: 8px;
+        white-space: normal;
+        word-break: break-word;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .sidebar {
+        width: 120px;
+        padding: 10px;
+    }
+
+    .sidebar h2 {
+        font-size: 15px;
+    }
+
+    .sidebar a {
+        font-size: 12px;
+        padding: 7px;
+    }
+
+    .main-content {
+        margin-left: 120px;
+        width: calc(100% - 120px);
+        padding: 12px;
+    }
+
+    .card p {
+        font-size: 22px;
+    }
+
+    table th,
+    table td {
+        font-size: 13px;
+    }
+}
+
+

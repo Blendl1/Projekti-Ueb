@@ -30,6 +30,7 @@ $totalUsers = $users->num_rows;
 <head>
     <meta charset="UTF-8">
     <title>Admin Dashboard | Vienna Nights</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="admin_style.css">
 </head>
 <body>
